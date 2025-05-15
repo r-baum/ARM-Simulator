@@ -1,0 +1,31 @@
+0000000000000714 <multiply>:
+ 714:	d10043ff 	sub	sp, sp, #0x10
+ 718:	b9000fe0 	str	w0, [sp, #12]
+ 71c:	b9000be1 	str	w1, [sp, #8]
+ 720:	b9400fe1 	ldr	w1, [sp, #12]
+ 724:	b9400be0 	ldr	w0, [sp, #8]
+ 728:	1b007c20 	mul	w0, w1, w0
+ 72c:	910043ff 	add	sp, sp, #0x10
+ 730:	d65f03c0 	ret
+
+0000000000000734 <main>:
+ 734:	f81e0ffe 	str	x30, [sp, #-32]!
+ 738:	52800060 	mov	w0, #0x3                   	// #3
+ 73c:	b9001fe0 	str	w0, [sp, #28]
+ 740:	52800080 	mov	w0, #0x4                   	// #4
+ 744:	b9001be0 	str	w0, [sp, #24]
+ 748:	b9401fe1 	ldr	w1, [sp, #28]
+ 74c:	b9401be0 	ldr	w0, [sp, #24]
+ 750:	0b000020 	add	w0, w1, w0
+ 754:	b9001fe0 	str	w0, [sp, #28]
+ 758:	b9401be1 	ldr	w1, [sp, #24]
+ 75c:	b9401fe0 	ldr	w0, [sp, #28]
+ 760:	0b000020 	add	w0, w1, w0
+ 764:	b9001be0 	str	w0, [sp, #24]
+ 768:	b9401be1 	ldr	w1, [sp, #24]
+ 76c:	b9401fe0 	ldr	w0, [sp, #28]
+ 770:	97ffffe9 	bl	714 <multiply>
+ 774:	b90017e0 	str	w0, [sp, #20]
+ 778:	52800000 	mov	w0, #0x0                   	// #0
+ 77c:	f84207fe 	ldr	x30, [sp], #32
+ 780:	d65f03c0 	ret

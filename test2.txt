@@ -1,0 +1,19 @@
+0000000000000714 <main>:
+ 714:	d100c3ff 	sub	sp, sp, #0x30
+ 718:	b9002fff 	str	wzr, [sp, #44]
+ 71c:	14000009 	b	740 <main+0x2c>
+ 720:	b9802fe0 	ldrsw	x0, [sp, #44]
+ 724:	d37ef400 	lsl	x0, x0, #2
+ 728:	910003e1 	mov	x1, sp
+ 72c:	b9402fe2 	ldr	w2, [sp, #44]
+ 730:	b8206822 	str	w2, [x1, x0]
+ 734:	b9402fe0 	ldr	w0, [sp, #44]
+ 738:	11000400 	add	w0, w0, #0x1
+ 73c:	b9002fe0 	str	w0, [sp, #44]
+ 740:	b9402fe0 	ldr	w0, [sp, #44]
+ 744:	7100241f 	cmp	w0, #0x9
+ 748:	54fffecd 	b.le	720 <main+0xc>
+ 74c:	52800000 	mov	w0, #0x0                   	// #0
+ 750:	9100c3ff 	add	sp, sp, #0x30
+ 754:	d65f03c0 	ret
+

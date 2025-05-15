@@ -1,0 +1,64 @@
+0000000000000754 <mystrlen>:
+ 754:	d10083ff 	sub	sp, sp, #0x20
+ 758:	f90007e0 	str	x0, [sp, #8]
+ 75c:	f94007e0 	ldr	x0, [sp, #8]
+ 760:	f9000fe0 	str	x0, [sp, #24]
+ 764:	14000004 	b	774 <mystrlen+0x20>
+ 768:	f94007e0 	ldr	x0, [sp, #8]
+ 76c:	91000400 	add	x0, x0, #0x1
+ 770:	f90007e0 	str	x0, [sp, #8]
+ 774:	f94007e0 	ldr	x0, [sp, #8]
+ 778:	39400000 	ldrb	w0, [x0]
+ 77c:	7100001f 	cmp	w0, #0x0
+ 780:	54ffff41 	b.ne	768 <mystrlen+0x14>  // b.any
+ 784:	f94007e1 	ldr	x1, [sp, #8]
+ 788:	f9400fe0 	ldr	x0, [sp, #24]
+ 78c:	cb000020 	sub	x0, x1, x0
+ 790:	910083ff 	add	sp, sp, #0x20
+ 794:	d65f03c0 	ret
+
+00000000000007b0 <test_strlen>:
+ 7ac:	f81d0ffe 	sub sp, sp, #0x30
+ 7b0:	f81d0ffe 	str	x30, [sp]
+ 7b4:	52800900 	mov	w0, #0x48                  	// #72
+ 7b8:	390083e0 	strb	w0, [sp, #32]
+ 7bc:	52800ca0 	mov	w0, #0x65                  	// #101
+ 7c0:	390087e0 	strb	w0, [sp, #33]
+ 7c4:	52800d80 	mov	w0, #0x6c                  	// #108
+ 7c8:	39008be0 	strb	w0, [sp, #34]
+ 7cc:	52800d80 	mov	w0, #0x6c                  	// #108
+ 7d0:	39008fe0 	strb	w0, [sp, #35]
+ 7d4:	52800de0 	mov	w0, #0x6f                  	// #111
+ 7d8:	390093e0 	strb	w0, [sp, #36]
+ 7dc:	52800400 	mov	w0, #0x20                  	// #32
+ 7e0:	390097e0 	strb	w0, [sp, #37]
+ 7e4:	52800ae0 	mov	w0, #0x57                  	// #87
+ 7e8:	39009be0 	strb	w0, [sp, #38]
+ 7ec:	52800de0 	mov	w0, #0x6f                  	// #111
+ 7f0:	39009fe0 	strb	w0, [sp, #39]
+ 7f4:	52800e40 	mov	w0, #0x72                  	// #114
+ 7f8:	3900a3e0 	strb	w0, [sp, #40]
+ 7fc:	52800d80 	mov	w0, #0x6c                  	// #108
+ 800:	3900a7e0 	strb	w0, [sp, #41]
+ 804:	52800c80 	mov	w0, #0x64                  	// #100
+ 808:	3900abe0 	strb	w0, [sp, #42]
+ 80c:	52800420 	mov	w0, #0x21                  	// #33
+ 810:	3900afe0 	strb	w0, [sp, #43]
+ 814:	3900b3ff 	strb	wzr, [sp, #44]
+ 818:	910083e0 	add	x0, sp, #0x20
+ 81c:	97ffffce 	bl	754 <mystrlen>
+ 820:	52800c40 	mov	w0, #0x62                  	// #98
+ 824:	390063e0 	strb	w0, [sp, #24]
+ 828:	52800d80 	mov	w0, #0x6c                  	// #108
+ 82c:	390067e0 	strb	w0, [sp, #25]
+ 830:	52800c20 	mov	w0, #0x61                  	// #97
+ 834:	39006be0 	strb	w0, [sp, #26]
+ 838:	52800d00 	mov	w0, #0x68                  	// #104
+ 83c:	39006fe0 	strb	w0, [sp, #27]
+ 840:	390073ff 	strb	wzr, [sp, #28]
+ 844:	910063e0 	add	x0, sp, #0x18
+ 848:	97ffffc3 	bl	754 <mystrlen>
+ 84c:	d503201f 	nop
+ 850:	f84307fe 	ldr	x30, [sp]
+ 854:	f84307fe 	add sp, sp, #0x30
+ 858:	d65f03c0 	ret

@@ -1,0 +1,24 @@
+0000000000000714 <arithmetic>:
+ 714:	d100c3ff 	sub	sp, sp, #0x30
+ 718:	528000e0 	mov	w0, #0x7
+ 71c:	b9000fe0 	str	w0, [sp, #12]
+ 720:	b9400fe0 	ldr	w0, [sp, #12]
+ 724:	11001400 	add	w0, w0, #0x5
+ 728:	b90013e0 	str	w0, [sp, #16]
+ 72c:	b94013e1 	ldr	w1, [sp, #16]
+ 730:	b9400fe0 	ldr	w0, [sp, #12]
+ 734:	4b000020 	sub	w0, w1, w0
+ 738:	b90017e0 	str	w0, [sp, #20]
+ 73c:	d2800080 	mov	x0, #0x4
+ 740:	f9000fe0 	str	x0, [sp, #24]
+ 744:	f9400fe1 	ldr	x1, [sp, #24]
+ 748:	aa0103e0 	mov	x0, x1
+ 74c:	d37ff800 	lsl	x0, x0, #1
+ 750:	8b010000 	add	x0, x0, x1
+ 754:	f90013e0 	str	x0, [sp, #32]
+ 758:	f94013e0 	ldr	x0, [sp, #32]
+ 75c:	d341fc00 	lsr	x0, x0, #1
+ 760:	f90017e0 	str	x0, [sp, #40]
+ 764:	d503201f 	nop
+ 768:	9100c3ff 	add	sp, sp, #0x30
+ 76c:	d65f03c0 	ret
